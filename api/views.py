@@ -7,10 +7,12 @@ from rest_framework import status
 def home(request):
     return render(request, 'index.html')
 
+
 class CountryCurrencySummaryView(APIView):
     def get(self, request):
         country_name = request.query_params.get("country")
-
+        
+        #error handling 400,404,500,502
         if not country_name:
             return Response(
                 {"error": "Query parameter 'country' is required."},
