@@ -20,8 +20,8 @@ class CountryCurrencySummaryView(APIView):
             )
 
         try:
-            # Call Country API
-            country_url = f"https://restcountries.com/v3.1/name/{country_name}"
+            # Call The Country API
+            country_url = f"https://restcountries.com/v3.1/name/{country_name}" 
             country_response = requests.get(country_url, timeout=10)
 
             if country_response.status_code != 200:
@@ -60,7 +60,7 @@ class CountryCurrencySummaryView(APIView):
             if currency_code == "USD":
                 exchange_rate = 1.0
             else:
-                # Call Currency API
+                # Call The Currency API
                 currency_url = f"https://api.frankfurter.app/latest?from=USD&to={currency_code}"
                 currency_response = requests.get(currency_url, timeout=10)
 
