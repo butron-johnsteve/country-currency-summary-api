@@ -20,8 +20,8 @@ class CountryCurrencySummaryView(APIView):
             )
 
         try:
-            # Call Country API
-            country_url = f"https://restcountries.com/v3.1/name/{country_name}"
+            # Call The Country API
+            country_url = f"https://restcountries.com/v3.1/name/{country_name}" 
             country_response = requests.get(country_url, timeout=10)
 
             if country_response.status_code != 200:
