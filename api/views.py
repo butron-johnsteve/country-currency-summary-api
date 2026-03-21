@@ -60,7 +60,7 @@ class CountryCurrencySummaryView(APIView):
             if currency_code == "USD":
                 exchange_rate = 1.0
             else:
-                # Call The Currency API
+                # Call Currency API
                 currency_url = f"https://api.frankfurter.app/latest?from=USD&to={currency_code}"
                 currency_response = requests.get(currency_url, timeout=10)
 
